@@ -13,16 +13,23 @@
   </td>
 
   <td>
-    <%= contact.phone %>
+    <%=link_to contact.phone, 'https://wa.me/'+contact.phone, target: "_blank" %>
   </td>
 
   <td>
     <%= contact.twitter %>
   </td>
+  <%
+=begin%>
+ <td>
+    <%= contact.user_id %>
+  </td> 
+<%
+=end%>
 
-  <td class="d-flex gap-3">
+  <td class="d-flex justify-content-between align-items-center gap-3">
     <%= link_to "Show", contact %>
-    <%= button_to "Destroy", contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to "Delete", contact, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:'btn btn-outline-danger btn-sm' %>
   </td> 
 
 </tr>

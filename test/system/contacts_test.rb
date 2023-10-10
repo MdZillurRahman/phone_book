@@ -42,8 +42,8 @@ class ContactsTest < ApplicationSystemTestCase
 
   test "should destroy Contact" do
     visit contact_url(@contact)
-    click_on "Destroy this contact", match: :first
+    click_on "Delete this contact", match: :first
 
-    assert_text "Contact was successfully destroyed"
+    assert_text "Contact was successfully deleted"
   end
 end

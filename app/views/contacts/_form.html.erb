@@ -35,6 +35,12 @@
     <%= form.label :twitter, style: "display: block" %>
     <%= form.text_field :twitter %>
   </div>
+
+  <div class='mt-1'>
+    <%= form.label :user_id, style: "display: none" %>
+    <%= form.number_field :user_id, id: :contact_user_id,  value:current_user.id, type: :hidden %>
+  </div>
+  
   
   <div class='mt-2'>
     <%= form.submit class:"btn btn-primary" %>

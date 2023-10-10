@@ -1,10 +1,14 @@
+<% if user_signed_in? %>
 <h1>All Contacts</h1>
 
 <table id="contacts" class="table table-striped table-bordered">
   <%= render "tableHeader" %>
   <tbody>
+
     <% @contacts.each do |contact| %>
+    <% if contact.user == current_user %>
       <%= render contact %>
+    <% end %>
     <% end %>
   </tbody>
 </table>
@@ -12,3 +16,20 @@
 
 
 <%= link_to "New contact", new_contact_path, class:"btn btn-primary" %>
+
+<% else %>
+
+<!-- Main Content -->
+<div class="mt-4">
+    <h1>Welcome to the Phone Book App</h1>
+    <p>This is your personal phone book where you can manage your contacts.</p> 
+
+    <!-- Call to Action -->
+    <div class="mt-4">
+        <p>Ready to add a new contact?</p>
+        <%= link_to "Add Contact", new_contact_path, class:"btn btn-primary" %>
+    </div>
+</div>
+
+
+<% end %>
