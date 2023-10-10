@@ -1,27 +1,28 @@
-<div id="<%= dom_id contact %>">
-  <p>
-    <strong>First name:</strong>
+
+<tr id="<%= dom_id contact %>">
+  <td>
     <%= contact.first_name %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Last name:</strong>
+  <td>
     <%= contact.last_name %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Email:</strong>
+  <td>
     <%= contact.email %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Phone:</strong>
+  <td>
     <%= contact.phone %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Twitter:</strong>
+  <td>
     <%= contact.twitter %>
-  </p>
+  </td>
 
-</div>
+  <td class="d-flex gap-3">
+    <%= link_to "Show", contact %>
+    <%= button_to "Destroy", contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td> 
+
+</tr>

@@ -2,13 +2,15 @@
 
 <h1>All Contacts</h1>
 
-<div id="contacts">
-  <% @contacts.each do |contact| %>
-    <%= render contact %>
-    <p>
-      <%= link_to "Show this contact", contact %>
-    </p>
-  <% end %>
-</div>
+<table id="contacts" class="table table-striped table-bordered">
+  <%= render "tableHeader" %>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <%= render contact %>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "New contact", new_contact_path %>
+
+
+<%= link_to "New contact", new_contact_path, class:"btn btn-primary" %>
